@@ -1,0 +1,159 @@
+:root {
+  --gutter: 10vw;
+  --cardWidth: 30vw;
+  --cardHeight: 70vh;
+  --jade: #4d9b7e;
+  --wood: #bb9564;
+  --smoke: #fff;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: var(--smoke);
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+header {
+  background-color: var(--jade);
+  z-index: 1000;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 15px 0;
+  display: flex;
+  position: fixed;
+  top: 0;
+}
+
+h1 {
+  margin-left: var(--gutter);
+  letter-spacing: 10px;
+  color: #fff;
+}
+
+.nav-links {
+  margin-right: var(--gutter);
+  gap: 20px;
+  display: flex;
+}
+
+.nav-links a {
+  color: #fff;
+  border-radius: 5px;
+  padding: 8px 12px;
+  font-weight: bold;
+  text-decoration: none;
+  transition: background-color .3s;
+}
+
+.nav-links a:hover {
+  background-color: var(--wood);
+}
+
+main {
+  padding-top: 40px;
+}
+
+h2 {
+  margin-left: var(--gutter);
+  color: var(--wood);
+  padding-top: 5%;
+}
+
+.card-container {
+  padding: 20px var(--gutter) 20px var(--gutter);
+  scroll-behavior: smooth;
+  gap: 15px;
+  display: flex;
+  overflow-x: auto;
+}
+
+.card {
+  border: 2px solid var(--wood);
+  width: var(--cardWidth);
+  height: var(--cardHeight);
+  cursor: pointer;
+  border-radius: 10px;
+  flex-shrink: 0;
+  transition: transform .3s, box-shadow .3s;
+  position: relative;
+}
+
+.card:hover {
+  transform: scale(1.02);
+  box-shadow: 0 10px 20px #0003;
+}
+
+.card img {
+  object-fit: cover;
+  border-radius: 8px;
+  width: 100%;
+  height: 90%;
+}
+
+.card p {
+  color: var(--wood);
+  margin: 10px;
+  position: absolute;
+  bottom: 0;
+}
+
+#contact {
+  background-color: var(--wood);
+  color: #fff;
+  text-align: center;
+  padding: 40px 20px;
+}
+
+.contact-container {
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  margin-bottom: 30px;
+  display: flex;
+}
+
+.contact-link {
+  color: #fff;
+  flex-direction: column;
+  align-items: center;
+  text-decoration: none;
+  transition: transform .3s, color .3s;
+  display: flex;
+}
+
+.contact-link img {
+  width: 50px;
+  height: 50px;
+  margin-bottom: 10px;
+}
+
+.contact-link span {
+  font-size: 12px;
+}
+
+.contact-link:hover {
+  color: var(--jade);
+  transform: translateY(-5px);
+}
+
+.resume a {
+  background-color: var(--jade);
+  color: #fff;
+  border-radius: 5px;
+  padding: 10px 20px;
+  text-decoration: none;
+  transition: background-color .3s;
+  display: inline-block;
+}
+
+.resume a:hover {
+  background-color: var(--smoke);
+  color: var(--jade);
+}
+/*# sourceMappingURL=index.3a01df49.css.map */
