@@ -1,10 +1,13 @@
 :root {
   --gutter: 10vw;
-  --cardWidth: 30vw;
+  --cardWidth: 25vw;
   --cardHeight: 70vh;
-  --jade: #4d9b7e;
-  --wood: #bb9564;
-  --smoke: #f5f5f5;
+  --background-color: #fff;
+  --primary-color: #000;
+  --secondary-color: #333;
+  --accent-color: #555;
+  --text-color: #000;
+  --neutral-color: #f0f0f0;
 }
 
 * {
@@ -14,17 +17,20 @@
 }
 
 body {
-  background-color: var(--smoke);
+  background-color: var(--background-color);
+  color: var(--text-color);
   font-family: Verdana, Geneva, Tahoma, sans-serif;
+  transition: background-color .3s, color .3s;
 }
 
 header {
-  background-color: var(--jade);
+  background-color: var(--primary-color);
   z-index: 1000;
   justify-content: space-between;
   align-items: center;
   width: 100%;
   padding: 15px 0;
+  transition: background-color .3s;
   display: flex;
   position: fixed;
   top: 0;
@@ -32,41 +38,41 @@ header {
 
 h1 {
   margin-left: var(--gutter);
-  letter-spacing: 10px;
-  color: #fff;
+  letter-spacing: 5px;
+  color: var(--neutral-color);
 }
 
 .nav-links {
-  margin-right: var(--gutter);
   gap: 20px;
   display: flex;
 }
 
 .nav-links a {
-  color: #fff;
+  color: var(--neutral-color);
   border-radius: 5px;
   padding: 8px 12px;
   font-weight: bold;
   text-decoration: none;
-  transition: background-color .3s;
+  transition: background-color .3s, color .3s;
 }
 
 .nav-links a:hover {
-  background-color: var(--wood);
+  background-color: var(--accent-color);
+  color: var(--background-color);
 }
 
 main {
-  padding-top: 40px;
+  padding-top: 30px;
 }
 
 h2 {
   margin-left: var(--gutter);
-  color: var(--wood);
+  color: var(--secondary-color);
   padding-top: 5%;
 }
 
 .card-container {
-  padding: 20px var(--gutter) 20px var(--gutter);
+  padding: 20px var(--gutter);
   scroll-behavior: smooth;
   gap: 15px;
   display: flex;
@@ -74,14 +80,14 @@ h2 {
 }
 
 .card {
-  border: 2px solid var(--wood);
+  border: 2px solid var(--secondary-color);
   width: var(--cardWidth);
   height: var(--cardHeight);
   cursor: pointer;
-  background-color: var(--jade);
+  background-color: var(--neutral-color);
   border-radius: 10px;
   flex-shrink: 0;
-  transition: transform .3s, box-shadow .3s;
+  transition: transform .3s, box-shadow .3s, border-color .3s;
   position: relative;
 }
 
@@ -98,16 +104,20 @@ h2 {
 }
 
 .card p {
-  color: var(--wood);
+  color: var(--text-color);
+  background: #ffffffb3;
+  border-radius: 5px;
   margin: 10px;
+  padding: 5px 10px;
   font-weight: bold;
   position: absolute;
-  bottom: 12px;
+  bottom: 7px;
+  left: 10px;
 }
 
 #contact {
-  background-color: var(--wood);
-  color: #fff;
+  background-color: var(--primary-color);
+  color: var(--neutral-color);
   text-align: center;
   padding: 40px 20px;
 }
@@ -121,11 +131,14 @@ h2 {
 }
 
 .contact-link {
-  color: #fff;
+  color: var(--neutral-color);
+  background-color: var(--secondary-color);
+  border-radius: 10px;
   flex-direction: column;
   align-items: center;
+  padding: 10px;
   text-decoration: none;
-  transition: transform .3s, color .3s;
+  transition: transform .3s, color .3s, background-color .3s;
   display: flex;
 }
 
@@ -140,22 +153,47 @@ h2 {
 }
 
 .contact-link:hover {
-  color: var(--jade);
+  color: var(--background-color);
+  background-color: var(--accent-color);
   transform: translateY(-5px);
 }
 
 .resume a {
-  background-color: var(--jade);
-  color: #fff;
+  background-color: var(--accent-color);
+  color: var(--background-color);
   border-radius: 5px;
   padding: 10px 20px;
   text-decoration: none;
-  transition: background-color .3s;
+  transition: background-color .3s, color .3s;
   display: inline-block;
 }
 
 .resume a:hover {
-  background-color: var(--smoke);
-  color: var(--jade);
+  background-color: var(--secondary-color);
+  color: var(--accent-color);
+}
+
+.theme-toggle {
+  cursor: pointer;
+  margin-right: var(--gutter);
+  color: var(--neutral-color);
+  background: none;
+  border: none;
+  border-radius: 5px;
+  justify-content: center;
+  align-items: center;
+  padding: 10px 20px;
+  font-size: 1em;
+  transition: background-color .3s, color .3s;
+  display: flex;
+}
+
+.theme-toggle:hover {
+  background-color: var(--accent-color);
+}
+
+.theme-toggle:focus {
+  box-shadow: 0 0 0 2px var(--accent-color);
+  outline: none;
 }
 /*# sourceMappingURL=index.83d9161e.css.map */
