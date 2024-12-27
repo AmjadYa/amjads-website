@@ -10,6 +10,10 @@
   --neutral-color: #f0f0f0;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -21,72 +25,6 @@ body {
   color: var(--text-color);
   font-family: Work Sans, Verdana, Geneva, Tahoma, sans-serif;
   transition: background-color .3s, color .3s;
-}
-
-header {
-  background-color: var(--primary-color);
-  padding: 15px var(--gutter);
-  z-index: 1000;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  transition: background-color .3s;
-  display: flex;
-  position: fixed;
-  top: 0;
-}
-
-header h1 {
-  left: var(--gutter);
-  letter-spacing: 5px;
-  color: var(--neutral-color);
-  margin: 0;
-  position: absolute;
-}
-
-.nav-links {
-  gap: 20px;
-  display: flex;
-}
-
-.nav-links a {
-  color: var(--neutral-color);
-  border-radius: 5px;
-  padding: 8px 12px;
-  font-weight: bold;
-  text-decoration: none;
-  transition: background-color .3s, color .3s;
-}
-
-.nav-links a:hover {
-  background-color: var(--accent-color);
-  color: var(--background-color);
-}
-
-.theme-toggle {
-  right: var(--gutter);
-  cursor: pointer;
-  color: var(--neutral-color);
-  background: none;
-  border: none;
-  border-radius: 5px;
-  justify-content: center;
-  align-items: center;
-  padding: 10px 20px;
-  font-size: 1em;
-  font-weight: bold;
-  transition: background-color .3s, color .3s;
-  display: flex;
-  position: absolute;
-}
-
-.theme-toggle:hover {
-  background-color: var(--accent-color);
-}
-
-.theme-toggle:focus {
-  box-shadow: 0 0 0 2px var(--accent-color);
-  outline: none;
 }
 
 main {

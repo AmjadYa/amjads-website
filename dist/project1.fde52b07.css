@@ -9,6 +9,10 @@
   --header-height: 60px;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -20,52 +24,6 @@ body {
   color: var(--text-color);
   font-family: Work Sans, sans-serif;
   transition: background-color .3s, color .3s;
-}
-
-header {
-  background-color: var(--primary-color);
-  padding: 15px var(--gutter);
-  z-index: 1000;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  transition: background-color .3s;
-  display: flex;
-  position: fixed;
-  top: 0;
-}
-
-header h1 {
-  left: var(--gutter);
-  letter-spacing: 5px;
-  color: var(--neutral-color);
-  margin: 0;
-  font-size: 1.2rem;
-  position: absolute;
-}
-
-.home-link {
-  color: var(--neutral-color);
-  text-decoration: none;
-}
-
-.nav-links {
-  gap: 20px;
-  display: flex;
-}
-
-.nav-links a {
-  color: var(--neutral-color);
-  border-radius: 5px;
-  padding: 8px 12px;
-  font-weight: bold;
-  text-decoration: none;
-  transition: background-color .3s, color .3s;
-}
-
-.nav-links a:hover {
-  background-color: var(--accent-color);
-  color: var(--background-color);
 }
 
 .hero {

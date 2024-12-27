@@ -1,30 +1,33 @@
+<!-- File: project1.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Autonomous Mario Kart Robot</title>
-  <!-- Link your template CSS -->
+
+  <!-- Immediately apply saved theme to avoid white flash -->
+  <script>(function() {
+    const storedThemeVars = localStorage.getItem('themeVariables');
+    if (storedThemeVars) {
+        const themeVars = JSON.parse(storedThemeVars);
+        for(const varName in themeVars)document.documentElement.style.setProperty(varName, themeVars[varName]);
+    }
+})();
+
+</script>
+
+  <!-- CSS for header + project template -->
+  <link rel="stylesheet" href="/index.9afb5835.css">
   <link rel="stylesheet" href="/project1.fde52b07.css">
-  <!-- Reuse Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+  <!-- Theme Handler to maintain color logic across pages -->
+  <script src="/index.9c6162f2.js" defer=""></script>
 </head>
 
 <body>
-  <!-- Header (identical to main page) -->
-  <header>
-    <h1>
-      <!-- Link back to main page -->
-      <a href="/index.html" class="home-link">Amjad Yaghi</a>
-    </h1>
-    <nav class="nav-links">
-      <!-- Link *back* to sections in index.html -->
-      <a href="/index.html#projects">Projects</a>
-      <a href="/index.html#experience">Experience</a>
-      <a href="/index.html#singapore-exchange">My Travels</a>
-      <a href="/index.html#contact">Contact Me</a>
-    </nav>
-  </header>
+  <!-- Insert the shared header -->
+  <div id="header-container"></div>
 
   <!-- Hero Section -->
   <section class="hero">
@@ -41,7 +44,7 @@
     </div>
   </section>
 
-  <!-- Table of Contents (sticky on scroll) -->
+  <!-- Table of Contents -->
   <nav class="table-of-contents" id="table-of-contents">
     <h3>Contents</h3>
     <ul>
@@ -88,17 +91,14 @@
     <p>&copy; 2024 Amjad Yaghi</p>
   </footer>
 
-  <!-- Theme script: reads color vars from localStorage and applies them -->
-  <script>(function() {
-    const storedTheme = localStorage.getItem('themeVariables');
-    if (storedTheme) {
-        const themeVars = JSON.parse(storedTheme);
-        for(const varName in themeVars)document.documentElement.style.setProperty(varName, themeVars[varName]);
-    }
-})();
+  <!-- Fetch the header.html and inject it -->
+  <script>fetch('header.html').then((response)=>response.text()).then((data)=>{
+    document.getElementById('header-container').innerHTML = data;
+});
 
 </script>
 
+  <!-- ToC sticky logic -->
   <script>document.addEventListener("DOMContentLoaded", function() {
     const toc = document.getElementById("table-of-contents");
     const hero = document.querySelector(".hero");
@@ -135,6 +135,5 @@
 });
 
 </script>
-
 <script src="/project1.aec5615f.js"></script></body>
 </html>

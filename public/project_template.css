@@ -1,4 +1,4 @@
-/* Root Variables (Default Monochrome if no localStorage theme) */
+/* File: project_template.css */
 :root {
   --background-color: #ffffff;
   --primary-color: #000000;
@@ -6,13 +6,14 @@
   --accent-color: #555555;
   --text-color: #000000;
   --neutral-color: #f0f0f0;
-  
-  /* Adjust spacing as you see fit */
   --gutter: 10vw;
-  --header-height: 60px; 
+  --header-height: 60px;
 }
 
-/* General Reset */
+html {
+  scroll-behavior: smooth;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -24,56 +25,6 @@ body {
   background-color: var(--background-color);
   color: var(--text-color);
   transition: background-color 0.3s ease, color 0.3s ease;
-}
-
-/* HEADER: match main site's spacing & look */
-header {
-  background-color: var(--primary-color);
-  padding: 15px var(--gutter);
-  position: fixed;
-  top: 0;
-  width: 100%;
-  z-index: 1000;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: background-color 0.3s ease;
-}
-
-/* Title on the left, same letter spacing, etc. */
-header h1 {
-  position: absolute;
-  left: var(--gutter);
-  margin: 0;
-  letter-spacing: 5px;
-  color: var(--neutral-color);
-  font-size: 1.2rem;
-}
-
-/* Home link: same color as main site */
-.home-link {
-  text-decoration: none;
-  color: var(--neutral-color);
-}
-
-/* NAV links on the right */
-.nav-links {
-  display: flex;
-  gap: 20px;
-}
-
-.nav-links a {
-  color: var(--neutral-color);
-  text-decoration: none;
-  font-weight: bold;
-  padding: 8px 12px;
-  border-radius: 5px;
-  transition: background-color 0.3s ease, color 0.3s ease;
-}
-
-.nav-links a:hover {
-  background-color: var(--accent-color);
-  color: var(--background-color);
 }
 
 /* HERO */
@@ -90,14 +41,15 @@ header h1 {
   padding: 40px 20px;
 }
 
+/* CHANGED: remove font-size override so h2 is consistent with main site */
+/*.hero-text h2 {
+   font-size: 2rem;
+   color: var(--secondary-color);
+   margin-bottom: 10px;
+}*/
 .hero-text h2 {
-  font-size: 2rem;
   color: var(--secondary-color);
   margin-bottom: 10px;
-}
-
-.hero-text p {
-  margin-bottom: 20px;
 }
 
 /* Resource links under hero */
@@ -124,8 +76,8 @@ header h1 {
 
 /* TABLE OF CONTENTS */
 .table-of-contents {
-  position: absolute; /* will switch to fixed when sticky */
-  top: 150vh; /* start out of view below hero */
+  position: absolute;
+  top: 150vh;
   left: var(--gutter);
   width: 200px;
   background-color: var(--neutral-color);
@@ -162,16 +114,14 @@ header h1 {
   color: var(--secondary-color);
 }
 
-/* When ToC is "sticky" */
 .table-of-contents.sticky {
   position: fixed;
-  top: 100px; /* how far from top when pinned */
+  top: 100px;
   opacity: 1;
   pointer-events: auto;
   transform: translateY(0);
 }
 
-/* Active link highlight */
 .table-of-contents li a.active {
   font-weight: bold;
   color: var(--accent-color);
@@ -179,11 +129,10 @@ header h1 {
 
 /* MAIN SECTIONS */
 main {
-  margin-top: 100px; 
-  margin-bottom: 100px; 
+  margin-top: 100px;
+  margin-bottom: 100px;
 }
 
-/* Content sections */
 .content-section {
   max-width: 800px;
   margin: 0 auto;
