@@ -2,481 +2,228 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Autonomous Mario Kart Robot</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Autonomous Mario Kart Robot</title>
 
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap"
-        rel="stylesheet" />
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap"
+    rel="stylesheet" />
 
-    <!-- Immediately apply saved theme -->
-    <script>
-        (function () {
-            const storedThemeVars = localStorage.getItem('themeVariables');
-            if (storedThemeVars) {
-                const themeVars = JSON.parse(storedThemeVars);
-                for (const varName in themeVars) {
-                    document.documentElement.style.setProperty(varName, themeVars[varName]);
-                }
-            }
-        })();
-    </script>
+  <!-- Immediately apply saved theme -->
+  <script>
+    (function () {
+      const storedThemeVars = localStorage.getItem('themeVariables');
+      if (storedThemeVars) {
+        const themeVars = JSON.parse(storedThemeVars);
+        for (const varName in themeVars) {
+          document.documentElement.style.setProperty(varName, themeVars[varName]);
+        }
+      }
+    })();
+  </script>
 
-    <!-- CSS for header + project template -->
-    <link rel="stylesheet" href="header.css" />
-    <link rel="stylesheet" href="../public/project_template.css" />
+  <!-- CSS for header + project template -->
+  <link rel="stylesheet" href="header.css" />
+  <link rel="stylesheet" href="../public/project_template.css" />
 
-    <!-- Theme Handler -->
-    <script src="theme_handler.js"></script>
+  <!-- Theme Handler -->
+  <script src="theme_handler.js"></script>
 </head>
 
 <body>
-    <!-- Insert the shared header -->
-    <div id="header-container"></div>
+  <!-- Insert the shared header -->
+  <div id="header-container"></div>
 
-    <!-- Hero Section -->
-    <section class="hero">
-        <div class="hero-text">
-            <h2>Autonomous Mario Kart Robot</h2>
-            <p>
-                A short overview about this project: This autonomous robot was built to...
-            </p>
-            <div class="resource-links">
-                <a href="#" target="_blank">GitHub Repo</a>
-                <a href="#" target="_blank">Demo Video</a>
-            </div>
-        </div>
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-text">
+      <h2>CNNs for Letter Detection and Imitation Driving</h2>
+      <p>
+        Teacher kept telling me that I'm just a neural network ;-;
+      </p>
+      <div class="resource-links">
+        <a href="https://github.com/AmjadYa/Autonomous-Robot" target="_blank">GitHub Repo</a>
+        <a href="" target="_blank">Demo Video</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Table of Contents -->
+  <nav class="table-of-contents" id="table-of-contents">
+    <h3>Contents</h3>
+    <ul>
+      <li><a href="#section1">Project Description</a></li>
+      <li><a href="#section2">Software + Control</a></li>
+      <li><a href="#section3">Challenges &amp; Results</a></li>
+    </ul>
+  </nav>
+
+  <!-- Main Content Sections -->
+  <main>
+    <section id="section1" class="content-section">
+      <h2>Project Description</h2>
+      <p>
+        uhhhh ros env simulation space, navigate around, avoid collisions with NPCs, read board using CNNS and drive all the way 
+        to the end without ever touching the robot yourself!
+
+      </p>
+      <div class="centered-image">
+        <img src="../public/images/CNN-project.png" alt="An example image" />
+      </div>
     </section>
 
-    <!-- Table of Contents -->
-    <nav class="table-of-contents" id="table-of-contents">
-        <h3>Contents</h3>
-        <ul>
-            <li><a href="#section1">Hardware Setup</a></li>
-            <li><a href="#section2">Software + Control</a></li>
-            <li><a href="#section3">Challenges &amp; Results</a></li>
-        </ul>
-    </nav>
+    <section id="section2" class="content-section">
+      <h2>Electrical</h2>
+      <p>
+        Some highlights from this discipline include soldering an H-Bridge so our robot could reverse the motor direction (and move backwards), 
+        creating the power distribution board which powered all of our components and wiring the entirety of the robot.
+      </p>
+      <div class="centered-image">
+        <img src="../public/images/exchange1.jpg" alt="An example GIF" />
+      </div>
+    </section>
 
-    <!-- Main Content Sections -->
-    <main>
-        <section id="section1" class="content-section">
-            <h2>Hardware Setup</h2>
-            <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                Phasellus laoreet, risus ac consectetur ultrices, sapien elit laoreet velit.
-                More descriptive text. Mauris sollicitudin dictum diam eget tempus.
-                More descriptive text. Mauris sollicitudin dictum diam eget tempus.
-                More descriptive text. Mauris sollicitudin dictum diam eget tempus.
-                More descriptive text. Mauris sollicitudin dictum diam eget tempus.
-                More descriptive text. Mauris sollicitudin dictum diam eget tempus.
-                More descriptive text. Mauris sollicitudin dictum diam eget tempus.
-                More descriptive text. Mauris sollicitudin dictum diam eget tempus.
-                More descriptive text. Mauris sollicitudin dictum diam eget tempus.
-                More descriptive text. Mauris sollicitudin dictum diam eget tempus.
-                More descriptive text. Mauris sollicitudin dictum diam eget tempus.
-                More descriptive text. Mauris sollicitudin dictum diam eget tempus.
-                More descriptive text. Mauris sollicitudin dictum diam eget tempus.
-                More descriptive text. Mauris sollicitudin dictum diam eget tempus.
-                More descriptive text. Mauris sollicitudin dictum diam eget tempus.
-                More descriptive text. Mauris sollicitudin dictum diam eget tempus.
-                More descriptive text. Mauris sollicitudin dictum diam eget tempus.
-                More descriptive text. Mauris sollicitudin dictum diam eget tempus.
-                More descriptive text. Mauris sollicitudin dictum diam eget tempus.
-                More descriptive text. Mauris sollicitudin dictum diam eget tempus.
-                More descriptive text. Mauris sollicitudin dictum diam eget tempus.
-                More descriptive text. Mauris sollicitudin dictum diam eget tempus.
-                More descriptive text. Mauris sollicitudin dictum diam eget tempus.
-                More descriptive text. Mauris sollicitudin dictum diam eget tempus.
-                More descriptive text. Mauris sollicitudin dictum diam eget tempus.
-                More descriptive text. Mauris sollicitudin dictum diam eget tempus.
-                More descriptive text. Mauris sollicitudin dictum diam eget tempus.
-                More descriptive text. Mauris sollicitudin dictum diam eget tempus.
-                More descriptive text. Mauris sollicitudin dictum diam eget tempus.
-                More descriptive text. Mauris sollicitudin dictum diam eget tempus.
-                More descriptive text. Mauris sollicitudin dictum diam eget tempus.
-                More descriptive text. Mauris sollicitudin dictum diam eget tempus.
-                More descriptive text. Mauris sollicitudin dictum diam eget tempus.
-                More descriptive text. Mauris sollicitudin dictum diam eget tempus.
-                More descriptive text. Mauris sollicitudin dictum diam eget tempus.
-                More descriptive text. Mauris sollicitudin dictum diam eget tempus.
-                More descriptive text. Mauris sollicitudin dictum diam eget tempus.
-                More descriptive text. Mauris sollicitudin dictum diam eget tempus.
-                More descriptive text. Mauris sollicitudin dictum diam eget tempus.
-                More descriptive text. Mauris sollicitudin dictum diam eget tempus.
-                More descriptive text. Mauris sollicitudin dictum diam eget tempus.
-                More descriptive text. Mauris sollicitudin dictum diam eget tempus.
-                More descriptive text. Mauris sollicitudin dictum diam eget tempus.
-                More descriptive text. Mauris sollicitudin dictum diam eget tempus.
-                More descriptive text. Mauris sollicitudin dictum diam eget tempus.
-                More descriptive text. Mauris sollicitudin dictum diam eget tempus.
-                More descriptive text. Mauris sollicitudin dictum diam eget tempus.
-                More descriptive text. Mauris sollicitudin dictum diam eget tempus.
-                More descriptive text. Mauris sollicitudin dictum diam eget tempus.
-                More descriptive text. Mauris sollicitudin dictum diam eget tempus.
-                More descriptive text. Mauris sollicitudin dictum diam eget tempus.
-                More descriptive text. Mauris sollicitudin dictum diam eget tempus.
-                More descriptive text. Mauris sollicitudin dictum diam eget tempus.
-                More descriptive text. Mauris sollicitudin dictum diam eget tempus.
-                More descriptive text. Mauris sollicitudin dictum diam eget tempus.
-                More descriptive text. Mauris sollicitudin dictum diam eget tempus.
-                More descriptive text. Mauris sollicitudin dictum diam eget tempus.
-                More descriptive text. Mauris sollicitudin dictum diam eget tempus.
-                More descriptive text. Mauris sollicitudin dictum diam eget tempus.
-                More descriptive text. Mauris sollicitudin dictum diam eget tempus.
-                More descriptive text. Mauris sollicitudin dictum diam eget tempus.
-                More descriptive text. Mauris sollicitudin dictum diam eget tempus.
-                More descriptive text. Mauris sollicitudin dictum diam eget tempus.
-                More descriptive text. Mauris sollicitudin dictum diam eget tempus.
-                More descriptive text. Mauris sollicitudin dictum diam eget tempus.
-                More descriptive text. Mauris sollicitudin dictum diam eget tempus.
-                More descriptive text. Mauris sollicitudin dictum diam eget tempus.
-                More descriptive text. Mauris sollicitudin dictum diam eget tempus.
-                More descriptive text. Mauris sollicitudin dictum diam eget tempus.
-                More descriptive text. Mauris sollicitudin dictum diam eget tempus.
-                More descriptive text. Mauris sollicitudin dictum diam eget tempus.
-                More descriptive text. Mauris sollicitudin dictum diam eget tempus.
-                More descriptive text. Mauris sollicitudin dictum diam eget tempus.
-                More descriptive text. Mauris sollicitudin dictum diam eget tempus.
-                More descriptive text. Mauris sollicitudin dictum diam eget tempus.
-                More descriptive text. Mauris sollicitudin dictum diam eget tempus.
-                More descriptive text. Mauris sollicitudin dictum diam eget tempus.
-                More descriptive text. Mauris sollicitudin dictum diam eget tempus.
-                More descriptive text. Mauris sollicitudin dictum diam eget tempus.
-                More descriptive text. Mauris sollicitudin dictum diam eget tempus.
-                More descriptive text. Mauris sollicitudin dictum diam eget tempus.
-                More descriptive text. Mauris sollicitudin dictum diam eget tempus.
-                More descriptive text. Mauris sollicitudin dictum diam eget tempus.
-                More descriptive text. Mauris sollicitudin dictum diam eget tempus.
-                More descriptive text. Mauris sollicitudin dictum diam eget tempus.
-                More descriptive text. Mauris sollicitudin dictum diam eget tempus.
-                More descriptive text. Mauris sollicitudin dictum diam eget tempus.
-                More descriptive text. Mauris sollicitudin dictum diam eget tempus.
-                More descriptive text. Mauris sollicitudin dictum diam eget tempus.
-                More descriptive text. Mauris sollicitudin dictum diam eget tempus.
-                More descriptive text. Mauris sollicitudin dictum diam eget tempus.
-                More descriptive text. Mauris sollicitudin dictum diam eget tempus.
-                More descriptive text. Mauris sollicitudin dictum diam eget tempus.
-                More descriptive text. Mauris sollicitudin dictum diam eget tempus.
-                More descriptive text. Mauris sollicitudin dictum diam eget tempus.
-                More descriptive text. Mauris sollicitudin dictum diam eget tempus.
-                More descriptive text. Mauris sollicitudin dictum diam eget tempus.
-                More descriptive text. Mauris sollicitudin dictum diam eget tempus.
-                More descriptive text. Mauris sollicitudin dictum diam eget tempus.
-                More descriptive text. Mauris sollicitudin dictum diam eget tempus.
-                More descriptive text. Mauris sollicitudin dictum diam eget tempus.
-                More descriptive text. Mauris sollicitudin dictum diam eget tempus.
-                More descriptive text. Mauris sollicitudin dictum diam eget tempus.
-                More descriptive text. Mauris sollicitudin dictum diam eget tempus.
-                More descriptive text. Mauris sollicitudin dictum diam eget tempus.
-                More descriptive text. Mauris sollicitudin dictum diam eget tempus.
-                More descriptive text. Mauris sollicitudin dictum diam eget tempus.
-                More descriptive text. Mauris sollicitudin dictum diam eget tempus.
-                More descriptive text. Mauris sollicitudin dictum diam eget tempus.
-                More descriptive text. Mauris sollicitudin dictum diam eget tempus.
-                More descriptive text. Mauris sollicitudin dictum diam eget tempus.
-                More descriptive text. Mauris sollicitudin dictum diam eget tempus.
-                More descriptive text. Mauris sollicitudin dictum diam eget tempus.
-                More descriptive text. Mauris sollicitudin dictum diam eget tempus.
-                More descriptive text. Mauris sollicitudin dictum diam eget tempus.
-                More descriptive text. Mauris sollicitudin dictum diam eget tempus.
-                More descriptive text. Mauris sollicitudin dictum diam eget tempus.
-                More descriptive text. Mauris sollicitudin dictum diam eget tempus.
-                More descriptive text. Mauris sollicitudin dictum diam eget tempus.
-                More descriptive text. Mauris sollicitudin dictum diam eget tempus.
-                More descriptive text. Mauris sollicitudin dictum diam eget tempus.
-                More descriptive text. Mauris sollicitudin dictum diam eget tempus.
-                More descriptive text. Mauris sollicitudin dictum diam eget tempus.
-                More descriptive text. Mauris sollicitudin dictum diam eget tempus.
-                More descriptive text. Mauris sollicitudin dictum diam eget tempus.
-                More descriptive text. Mauris sollicitudin dictum diam eget tempus.
-                More descriptive text. Mauris sollicitudin dictum diam eget tempus.
-                More descriptive text. Mauris sollicitudin dictum diam eget tempus.
-                More descriptive text. Mauris sollicitudin dictum diam eget tempus.
-                More descriptive text. Mauris sollicitudin dictum diam eget tempus.
-                More descriptive text. Mauris sollicitudin dictum diam eget tempus.
-                More descriptive text. Mauris sollicitudin dictum diam eget tempus.
-                More descriptive text. Mauris sollicitudin dictum diam eget tempus.
-                More descriptive text. Mauris sollicitudin dictum diam eget tempus.
-                More descriptive text. Mauris sollicitudin dictum diam eget tempus.
-                More descriptive text. Mauris sollicitudin dictum diam eget tempus.
-                More descriptive text. Mauris sollicitudin dictum diam eget tempus.
-                More descriptive text. Mauris sollicitudin dictum diam eget tempus.
-                More descriptive text. Mauris sollicitudin dictum diam eget tempus.
-                More descriptive text. Mauris sollicitudin dictum diam eget tempus.
-                More descriptive text. Mauris sollicitudin dictum diam eget tempus.
-                More descriptive text. Mauris sollicitudin dictum diam eget tempus.
-                More descriptive text. Mauris sollicitudin dictum diam eget tempus.
-                More descriptive text. Mauris sollicitudin dictum diam eget tempus.
-                More descriptive text. Mauris sollicitudin dictum diam eget tempus.
+    <section id="section3" class="content-section">
+      <h2>Challenges &amp; Results</h2>
+      <p>
+        More descriptive text. Mauris sollicitudin dictum diam eget tempus.
+        More descriptive text. Mauris sollicitudin dictum diam eget tempus.
+        More descriptive text. Mauris sollicitudin dictum diam eget tempus.
+        More descriptive text. Mauris sollicitudin dictum diam eget tempus.
+        More descriptive text. Mauris sollicitudin dictum diam eget tempus.
+        More descriptive text. Mauris sollicitudin dictum diam eget tempus.
+        More descriptive text. Mauris sollicitudin dictum diam eget tempus.
+        More descriptive text. Mauris sollicitudin dictum diam eget tempus.
+        More descriptive text. Mauris sollicitudin dictum diam eget tempus.
+        More descriptive text. Mauris sollicitudin dictum diam eget tempus.
+        More descriptive text. Mauris sollicitudin dictum diam eget tempus.
+        More descriptive text. Mauris sollicitudin dictum diam eget tempus.
+        More descriptive text. Mauris sollicitudin dictum diam eget tempus.
+        More descriptive text. Mauris sollicitudin dictum diam eget tempus.
+        More descriptive text. Mauris sollicitudin dictum diam eget tempus.
+        More descriptive text. Mauris sollicitudin dictum diam eget tempus.
+        More descriptive text. Mauris sollicitudin dictum diam eget tempus.
+        More descriptive text. Mauris sollicitudin dictum diam eget tempus.
+        More descriptive text. Mauris sollicitudin dictum diam eget tempus.
+        More descriptive text. Mauris sollicitudin dictum diam eget tempus.
+        More descriptive text. Mauris sollicitudin dictum diam eget tempus.
+        More descriptive text. Mauris sollicitudin dictum diam eget tempus.
+        More descriptive text. Mauris sollicitudin dictum diam eget tempus.
+        More descriptive text. Mauris sollicitudin dictum diam eget tempus.
+        More descriptive text. Mauris sollicitudin dictum diam eget tempus.
+        More descriptive text. Mauris sollicitudin dictum diam eget tempus.
+        More descriptive text. Mauris sollicitudin dictum diam eget tempus.
+        More descriptive text. Mauris sollicitudin dictum diam eget tempus.
+        More descriptive text. Mauris sollicitudin dictum diam eget tempus.
+        More descriptive text. Mauris sollicitudin dictum diam eget tempus.
+        More descriptive text. Mauris sollicitudin dictum diam eget tempus.
+        More descriptive text. Mauris sollicitudin dictum diam eget tempus.
+        More descriptive text. Mauris sollicitudin dictum diam eget tempus.
+        More descriptive text. Mauris sollicitudin dictum diam eget tempus.
+        More descriptive text. Mauris sollicitudin dictum diam eget tempus.
+        More descriptive text. Mauris sollicitudin dictum diam eget tempus.
+        More descriptive text. Mauris sollicitudin dictum diam eget tempus.
+        More descriptive text. Mauris sollicitudin dictum diam eget tempus.
+        More descriptive text. Mauris sollicitudin dictum diam eget tempus.
+        More descriptive text. Mauris sollicitudin dictum diam eget tempus.
+        More descriptive text. Mauris sollicitudin dictum diam eget tempus.
+        More descriptive text. Mauris sollicitudin dictum diam eget tempus.
+        More descriptive text. Mauris sollicitudin dictum diam eget tempus.
+        More descriptive text. Mauris sollicitudin dictum diam eget tempus.
+        More descriptive text. Mauris sollicitudin dictum diam eget tempus.
+        More descriptive text. Mauris sollicitudin dictum diam eget tempus.
+        More descriptive text. Mauris sollicitudin dictum diam eget tempus.
+        More descriptive text. Mauris sollicitudin dictum diam eget tempus.
+        More descriptive text. Mauris sollicitudin dictum diam eget tempus.
+        More descriptive text. Mauris sollicitudin dictum diam eget tempus.
+        More descriptive text. Mauris sollicitudin dictum diam eget tempus.
+        More descriptive text. Mauris sollicitudin dictum diam eget tempus.
+        More descriptive text. Mauris sollicitudin dictum diam eget tempus.
+        More descriptive text. Mauris sollicitudin dictum diam eget tempus.
+        More descriptive text. Mauris sollicitudin dictum diam eget tempus.
+        More descriptive text. Mauris sollicitudin dictum diam eget tempus.
+        More descriptive text. Mauris sollicitudin dictum diam eget tempus.
+        More descriptive text. Mauris sollicitudin dictum diam eget tempus.
+        More descriptive text. Mauris sollicitudin dictum diam eget tempus.
+        More descriptive text. Mauris sollicitudin dictum diam eget tempus.
+        More descriptive text. Mauris sollicitudin dictum diam eget tempus.
+        More descriptive text. Mauris sollicitudin dictum diam eget tempus.
+        More descriptive text. Mauris sollicitudin dictum diam eget tempus.
+        More descriptive text. Mauris sollicitudin dictum diam eget tempus.
+        More descriptive text. Mauris sollicitudin dictum diam eget tempus.
+        More descriptive text. Mauris sollicitudin dictum diam eget tempus.
+        More descriptive text. Mauris sollicitudin dictum diam eget tempus.
+        More descriptive text. Mauris sollicitudin dictum diam eget tempus.
+        More descriptive text. Mauris sollicitudin dictum diam eget tempus.
+        More descriptive text. Mauris sollicitudin dictum diam eget tempus.
+        More descriptive text. Mauris sollicitudin dictum diam eget tempus.
+        More descriptive text. Mauris sollicitudin dictum diam eget tempus.
+      </p>
+    </section>
+  </main>
 
-            </p>
-            <div class="centered-image">
-                <img src="../public/images/robot_on_zipline.jpg" alt="An example image" />
-            </div>
-        </section>
+  <footer>
+    <p>&copy; 2024 Amjad Yaghi</p>
+  </footer>
 
-        <section id="section2" class="content-section">
-            <h2>Software + Control</h2>
-            <p>
-                Another chunk of text goes here. Etiam bibendum pharetra eros,
-                in rhoncus elit bibendum id.
-                More descriptive text. Mauris sollicitudin dictum diam eget tempus.
-                More descriptive text. Mauris sollicitudin dictum diam eget tempus.
-                More descriptive text. Mauris sollicitudin dictum diam eget tempus.
-                More descriptive text. Mauris sollicitudin dictum diam eget tempus.
-                More descriptive text. Mauris sollicitudin dictum diam eget tempus.
-                More descriptive text. Mauris sollicitudin dictum diam eget tempus.
-                More descriptive text. Mauris sollicitudin dictum diam eget tempus.
-                More descriptive text. Mauris sollicitudin dictum diam eget tempus.
-                More descriptive text. Mauris sollicitudin dictum diam eget tempus.
-                More descriptive text. Mauris sollicitudin dictum diam eget tempus.
-                More descriptive text. Mauris sollicitudin dictum diam eget tempus.
-                More descriptive text. Mauris sollicitudin dictum diam eget tempus.
-                More descriptive text. Mauris sollicitudin dictum diam eget tempus.
-                More descriptive text. Mauris sollicitudin dictum diam eget tempus.
-                More descriptive text. Mauris sollicitudin dictum diam eget tempus.
-                More descriptive text. Mauris sollicitudin dictum diam eget tempus.
-                More descriptive text. Mauris sollicitudin dictum diam eget tempus.
-                More descriptive text. Mauris sollicitudin dictum diam eget tempus.
-                More descriptive text. Mauris sollicitudin dictum diam eget tempus.
-                More descriptive text. Mauris sollicitudin dictum diam eget tempus.
-                More descriptive text. Mauris sollicitudin dictum diam eget tempus.
-                More descriptive text. Mauris sollicitudin dictum diam eget tempus.
-                More descriptive text. Mauris sollicitudin dictum diam eget tempus.
-                More descriptive text. Mauris sollicitudin dictum diam eget tempus.
-                More descriptive text. Mauris sollicitudin dictum diam eget tempus.
-                More descriptive text. Mauris sollicitudin dictum diam eget tempus.
-                More descriptive text. Mauris sollicitudin dictum diam eget tempus.
-                More descriptive text. Mauris sollicitudin dictum diam eget tempus.
-                More descriptive text. Mauris sollicitudin dictum diam eget tempus.
-                More descriptive text. Mauris sollicitudin dictum diam eget tempus.
-                More descriptive text. Mauris sollicitudin dictum diam eget tempus.
-                More descriptive text. Mauris sollicitudin dictum diam eget tempus.
-                More descriptive text. Mauris sollicitudin dictum diam eget tempus.
-                More descriptive text. Mauris sollicitudin dictum diam eget tempus.
-                More descriptive text. Mauris sollicitudin dictum diam eget tempus.
-                More descriptive text. Mauris sollicitudin dictum diam eget tempus.
-                More descriptive text. Mauris sollicitudin dictum diam eget tempus.
-                More descriptive text. Mauris sollicitudin dictum diam eget tempus.
-                More descriptive text. Mauris sollicitudin dictum diam eget tempus.
-                More descriptive text. Mauris sollicitudin dictum diam eget tempus.
-                More descriptive text. Mauris sollicitudin dictum diam eget tempus.
-                More descriptive text. Mauris sollicitudin dictum diam eget tempus.
-                More descriptive text. Mauris sollicitudin dictum diam eget tempus.
-                More descriptive text. Mauris sollicitudin dictum diam eget tempus.
-                More descriptive text. Mauris sollicitudin dictum diam eget tempus.
-                More descriptive text. Mauris sollicitudin dictum diam eget tempus.
-                More descriptive text. Mauris sollicitudin dictum diam eget tempus.
-                More descriptive text. Mauris sollicitudin dictum diam eget tempus.
-                More descriptive text. Mauris sollicitudin dictum diam eget tempus.
-                More descriptive text. Mauris sollicitudin dictum diam eget tempus.
-                More descriptive text. Mauris sollicitudin dictum diam eget tempus.
-                More descriptive text. Mauris sollicitudin dictum diam eget tempus.
-                More descriptive text. Mauris sollicitudin dictum diam eget tempus.
-                More descriptive text. Mauris sollicitudin dictum diam eget tempus.
-                More descriptive text. Mauris sollicitudin dictum diam eget tempus.
-                More descriptive text. Mauris sollicitudin dictum diam eget tempus.
-                More descriptive text. Mauris sollicitudin dictum diam eget tempus.
-                More descriptive text. Mauris sollicitudin dictum diam eget tempus.
-                More descriptive text. Mauris sollicitudin dictum diam eget tempus.
-                More descriptive text. Mauris sollicitudin dictum diam eget tempus.
-                More descriptive text. Mauris sollicitudin dictum diam eget tempus.
-                More descriptive text. Mauris sollicitudin dictum diam eget tempus.
-                More descriptive text. Mauris sollicitudin dictum diam eget tempus.
-                More descriptive text. Mauris sollicitudin dictum diam eget tempus.
-                More descriptive text. Mauris sollicitudin dictum diam eget tempus.
-                More descriptive text. Mauris sollicitudin dictum diam eget tempus.
-                More descriptive text. Mauris sollicitudin dictum diam eget tempus.
-                More descriptive text. Mauris sollicitudin dictum diam eget tempus.
-                More descriptive text. Mauris sollicitudin dictum diam eget tempus.
-                More descriptive text. Mauris sollicitudin dictum diam eget tempus.
-                More descriptive text. Mauris sollicitudin dictum diam eget tempus.
-                More descriptive text. Mauris sollicitudin dictum diam eget tempus.
-                More descriptive text. Mauris sollicitudin dictum diam eget tempus.
-                More descriptive text. Mauris sollicitudin dictum diam eget tempus.
-                More descriptive text. Mauris sollicitudin dictum diam eget tempus.
-                More descriptive text. Mauris sollicitudin dictum diam eget tempus.
-                More descriptive text. Mauris sollicitudin dictum diam eget tempus.
-                More descriptive text. Mauris sollicitudin dictum diam eget tempus.
-                More descriptive text. Mauris sollicitudin dictum diam eget tempus.
-                More descriptive text. Mauris sollicitudin dictum diam eget tempus.
-                More descriptive text. Mauris sollicitudin dictum diam eget tempus.
-                More descriptive text. Mauris sollicitudin dictum diam eget tempus.
-                More descriptive text. Mauris sollicitudin dictum diam eget tempus.
-                More descriptive text. Mauris sollicitudin dictum diam eget tempus.
-                More descriptive text. Mauris sollicitudin dictum diam eget tempus.
-                More descriptive text. Mauris sollicitudin dictum diam eget tempus.
-                More descriptive text. Mauris sollicitudin dictum diam eget tempus.
-                More descriptive text. Mauris sollicitudin dictum diam eget tempus.
-                More descriptive text. Mauris sollicitudin dictum diam eget tempus.
-                More descriptive text. Mauris sollicitudin dictum diam eget tempus.
-                More descriptive text. Mauris sollicitudin dictum diam eget tempus.
-                More descriptive text. Mauris sollicitudin dictum diam eget tempus.
-                More descriptive text. Mauris sollicitudin dictum diam eget tempus.
-                More descriptive text. Mauris sollicitudin dictum diam eget tempus.
-                More descriptive text. Mauris sollicitudin dictum diam eget tempus.
-                More descriptive text. Mauris sollicitudin dictum diam eget tempus.
-                More descriptive text. Mauris sollicitudin dictum diam eget tempus.
-                More descriptive text. Mauris sollicitudin dictum diam eget tempus.
-                More descriptive text. Mauris sollicitudin dictum diam eget tempus.
-                More descriptive text. Mauris sollicitudin dictum diam eget tempus.
-                More descriptive text. Mauris sollicitudin dictum diam eget tempus.
-                More descriptive text. Mauris sollicitudin dictum diam eget tempus.
-                More descriptive text. Mauris sollicitudin dictum diam eget tempus.
-                More descriptive text. Mauris sollicitudin dictum diam eget tempus.
-                More descriptive text. Mauris sollicitudin dictum diam eget tempus.
-                More descriptive text. Mauris sollicitudin dictum diam eget tempus.
-                More descriptive text. Mauris sollicitudin dictum diam eget tempus.
-                More descriptive text. Mauris sollicitudin dictum diam eget tempus.
+  <!-- Fetch the header.html and inject it, then attach theme toggle -->
+  <script>
+    fetch('header.html')
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById('header-container').innerHTML = data;
+        setupThemeToggle();
+      });
+  </script>
 
-            </p>
-            <div class="centered-image">
-                <img src="../public/images/exchange1.jpg" alt="An example GIF" />
-            </div>
-        </section>
+  <!-- ToC sticky logic -->
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const toc = document.getElementById("table-of-contents");
+      const hero = document.querySelector(".hero");
+      const sections = document.querySelectorAll("section.content-section");
+      const links = toc.querySelectorAll("ul li a");
 
-        <section id="section3" class="content-section">
-            <h2>Challenges &amp; Results</h2>
-            <p>
-                More descriptive text. Mauris sollicitudin dictum diam eget tempus.
-                More descriptive text. Mauris sollicitudin dictum diam eget tempus.
-                More descriptive text. Mauris sollicitudin dictum diam eget tempus.
-                More descriptive text. Mauris sollicitudin dictum diam eget tempus.
-                More descriptive text. Mauris sollicitudin dictum diam eget tempus.
-                More descriptive text. Mauris sollicitudin dictum diam eget tempus.
-                More descriptive text. Mauris sollicitudin dictum diam eget tempus.
-                More descriptive text. Mauris sollicitudin dictum diam eget tempus.
-                More descriptive text. Mauris sollicitudin dictum diam eget tempus.
-                More descriptive text. Mauris sollicitudin dictum diam eget tempus.
-                More descriptive text. Mauris sollicitudin dictum diam eget tempus.
-                More descriptive text. Mauris sollicitudin dictum diam eget tempus.
-                More descriptive text. Mauris sollicitudin dictum diam eget tempus.
-                More descriptive text. Mauris sollicitudin dictum diam eget tempus.
-                More descriptive text. Mauris sollicitudin dictum diam eget tempus.
-                More descriptive text. Mauris sollicitudin dictum diam eget tempus.
-                More descriptive text. Mauris sollicitudin dictum diam eget tempus.
-                More descriptive text. Mauris sollicitudin dictum diam eget tempus.
-                More descriptive text. Mauris sollicitudin dictum diam eget tempus.
-                More descriptive text. Mauris sollicitudin dictum diam eget tempus.
-                More descriptive text. Mauris sollicitudin dictum diam eget tempus.
-                More descriptive text. Mauris sollicitudin dictum diam eget tempus.
-                More descriptive text. Mauris sollicitudin dictum diam eget tempus.
-                More descriptive text. Mauris sollicitudin dictum diam eget tempus.
-                More descriptive text. Mauris sollicitudin dictum diam eget tempus.
-                More descriptive text. Mauris sollicitudin dictum diam eget tempus.
-                More descriptive text. Mauris sollicitudin dictum diam eget tempus.
-                More descriptive text. Mauris sollicitudin dictum diam eget tempus.
-                More descriptive text. Mauris sollicitudin dictum diam eget tempus.
-                More descriptive text. Mauris sollicitudin dictum diam eget tempus.
-                More descriptive text. Mauris sollicitudin dictum diam eget tempus.
-                More descriptive text. Mauris sollicitudin dictum diam eget tempus.
-                More descriptive text. Mauris sollicitudin dictum diam eget tempus.
-                More descriptive text. Mauris sollicitudin dictum diam eget tempus.
-                More descriptive text. Mauris sollicitudin dictum diam eget tempus.
-                More descriptive text. Mauris sollicitudin dictum diam eget tempus.
-                More descriptive text. Mauris sollicitudin dictum diam eget tempus.
-                More descriptive text. Mauris sollicitudin dictum diam eget tempus.
-                More descriptive text. Mauris sollicitudin dictum diam eget tempus.
-                More descriptive text. Mauris sollicitudin dictum diam eget tempus.
-                More descriptive text. Mauris sollicitudin dictum diam eget tempus.
-                More descriptive text. Mauris sollicitudin dictum diam eget tempus.
-                More descriptive text. Mauris sollicitudin dictum diam eget tempus.
-                More descriptive text. Mauris sollicitudin dictum diam eget tempus.
-                More descriptive text. Mauris sollicitudin dictum diam eget tempus.
-                More descriptive text. Mauris sollicitudin dictum diam eget tempus.
-                More descriptive text. Mauris sollicitudin dictum diam eget tempus.
-                More descriptive text. Mauris sollicitudin dictum diam eget tempus.
-                More descriptive text. Mauris sollicitudin dictum diam eget tempus.
-                More descriptive text. Mauris sollicitudin dictum diam eget tempus.
-                More descriptive text. Mauris sollicitudin dictum diam eget tempus.
-                More descriptive text. Mauris sollicitudin dictum diam eget tempus.
-                More descriptive text. Mauris sollicitudin dictum diam eget tempus.
-                More descriptive text. Mauris sollicitudin dictum diam eget tempus.
-                More descriptive text. Mauris sollicitudin dictum diam eget tempus.
-                More descriptive text. Mauris sollicitudin dictum diam eget tempus.
-                More descriptive text. Mauris sollicitudin dictum diam eget tempus.
-                More descriptive text. Mauris sollicitudin dictum diam eget tempus.
-                More descriptive text. Mauris sollicitudin dictum diam eget tempus.
-                More descriptive text. Mauris sollicitudin dictum diam eget tempus.
-                More descriptive text. Mauris sollicitudin dictum diam eget tempus.
-                More descriptive text. Mauris sollicitudin dictum diam eget tempus.
-                More descriptive text. Mauris sollicitudin dictum diam eget tempus.
-                More descriptive text. Mauris sollicitudin dictum diam eget tempus.
-                More descriptive text. Mauris sollicitudin dictum diam eget tempus.
-                More descriptive text. Mauris sollicitudin dictum diam eget tempus.
-                More descriptive text. Mauris sollicitudin dictum diam eget tempus.
-                More descriptive text. Mauris sollicitudin dictum diam eget tempus.
-                More descriptive text. Mauris sollicitudin dictum diam eget tempus.
-                More descriptive text. Mauris sollicitudin dictum diam eget tempus.
-                More descriptive text. Mauris sollicitudin dictum diam eget tempus.
-                More descriptive text. Mauris sollicitudin dictum diam eget tempus.
-            </p>
-        </section>
-    </main>
-
-    <footer>
-        <p>&copy; 2024 Amjad Yaghi</p>
-    </footer>
-
-    <!-- Fetch the header.html and inject it, then attach theme toggle -->
-    <script>
-        fetch('header.html')
-            .then(response => response.text())
-            .then(data => {
-                document.getElementById('header-container').innerHTML = data;
-                setupThemeToggle();
-            });
-    </script>
-
-    <!-- ToC sticky logic -->
-    <script>
-        document.addEventListener("DOMContentLoaded", function () {
-            const toc = document.getElementById("table-of-contents");
-            const hero = document.querySelector(".hero");
-            const sections = document.querySelectorAll("section.content-section");
-            const links = toc.querySelectorAll("ul li a");
-
-            // Show/hide ToC once hero is out of view
-            const heroObserver = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (!entry.isIntersecting) {
-                        toc.classList.add("sticky");
-                    } else {
-                        toc.classList.remove("sticky");
-                    }
-                });
-            }, {
-                root: null,
-                threshold: 0,
-            });
-            heroObserver.observe(hero);
-
-            // Highlight active section link in ToC
-            const sectionObserver = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        // Remove active from all links
-                        links.forEach(link => link.classList.remove("active"));
-                        // Add active to the matching link
-                        const id = entry.target.getAttribute("id");
-                        const activeLink = toc.querySelector(`a[href="#${id}"]`);
-                        if (activeLink) {
-                            activeLink.classList.add("active");
-                        }
-                    }
-                });
-            }, {
-                root: null,
-                threshold: 0.6
-            });
-
-            sections.forEach(sec => sectionObserver.observe(sec));
+      // Show/hide ToC once hero is out of view
+      const heroObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (!entry.isIntersecting) {
+            toc.classList.add("sticky");
+          } else {
+            toc.classList.remove("sticky");
+          }
         });
-    </script>
+      }, {
+        root: null,
+        threshold: 0,
+      });
+      heroObserver.observe(hero);
+
+      // Highlight active section link in ToC
+      const sectionObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            // Remove active from all links
+            links.forEach(link => link.classList.remove("active"));
+            // Add active to the matching link
+            const id = entry.target.getAttribute("id");
+            const activeLink = toc.querySelector(`a[href="#${id}"]`);
+            if (activeLink) {
+              activeLink.classList.add("active");
+            }
+          }
+        });
+      }, {
+        root: null,
+        threshold: 0.6
+      });
+
+      sections.forEach(sec => sectionObserver.observe(sec));
+    });
+  </script>
 </body>
 
 </html>

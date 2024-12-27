@@ -6,7 +6,7 @@
   --accent-color: #555555;
   --text-color: #000000;
   --neutral-color: #f0f0f0;
-  --gutter: 10vw;
+  --gutter: 15vw;
   --header-height: 60px;
 }
 
@@ -65,7 +65,7 @@ body {
 
 .resource-links a {
   background-color: var(--accent-color);
-  color: var(--background-color);
+  color: white;
   text-decoration: none;
   padding: 8px 16px;
   border-radius: 6px;
@@ -73,7 +73,7 @@ body {
 }
 
 .resource-links a:hover {
-  background-color: var(--secondary-color);
+  background-color: white;
   color: var(--accent-color);
 }
 
@@ -132,7 +132,6 @@ body {
 
 /* MAIN SECTIONS */
 main {
-  margin-top: 100px;
   margin-bottom: 100px;
 }
 

@@ -1,6 +1,6 @@
 /* File: style.css */
 :root {
-  --gutter: 10vw;
+  --gutter: 15vw;
   --cardWidth: 25vw;
   --cardHeight: 70vh;
 
@@ -30,14 +30,10 @@ body {
   transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-/* MAIN content spacing */
-main {
-  padding-top: 30px;
-}
-
 h2 {
+  font-size: 1.6em;
   margin-left: var(--gutter);
-  padding-top: 5%;
+  padding-top: 4.33%;
   color: var(--secondary-color);
 }
 
@@ -50,20 +46,18 @@ h2 {
 }
 
 .card {
-  border: 2px solid var(--secondary-color);
+  position: relative;
   border-radius: 10px;
   width: var(--cardWidth);
   height: var(--cardHeight);
   flex-shrink: 0;
   cursor: pointer;
-  position: relative;
   transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
   background-color: var(--neutral-color);
 }
 
 .card:hover {
-  transform: scale(1.02);
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  transform: scale(1.01);
 }
 
 .card img {
@@ -73,16 +67,66 @@ h2 {
   object-fit: cover;
 }
 
-.card p {
-  margin: 10px;
-  color: var(--text-color);
+
+
+/* 2) Vertical text in Japanese (top-left) */
+.text-japanese {
   position: absolute;
-  bottom: 7px;
-  font-weight: bold;
-  background: rgba(255, 255, 255, 0.7);
-  padding: 5px;
+  top: 10px;
+  left: 10px;
+
+  writing-mode: vertical-rl;
+  text-orientation: upright;
+  letter-spacing: 0.7em;
+
+  /* A little style to make it pop */
+  background: rgba(224, 0, 0, 0.7);
+  padding: 5px 8px;
   border-radius: 5px;
+  font-weight: bold;
+  font-size: 1.3em;
+  color: var(--text-color);
+
+  /* If you need to limit the number of characters on one line vertically,
+           you can adjust width or use some line-height. For example:
+             width: 1.5em;
+             line-height: 1.2;
+        */
 }
+
+/* 3) English text bottom-center */
+.text-english {
+  position: absolute;
+  bottom: 50px; /* Adjust as desired */
+  left: 50%;
+  transform: translateX(-50%);
+  
+  /* Center the text within that horizontal space */
+  text-align: center;
+  max-width: 80%;
+  
+  /* Semi-transparent background to allow blur effect */
+  background: rgba(255, 255, 255, 0.3);
+  
+  /* Apply the blur effect */
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px); /* For Safari */
+  
+  /* Optional: Add border and shadow for enhanced effect */
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  
+  /* Smooth transitions */
+  transition: backdrop-filter 0.3s ease, background 0.3s ease;
+  
+  padding: 5px 8px;
+  border-radius: 5px;
+  font-weight: bold;
+  font-size: 1.4em;
+  color: var(--text-color);
+}
+
+
 
 #contact {
   padding: 40px 20px;
@@ -131,7 +175,7 @@ h2 {
   display: inline-block;
   padding: 10px 20px;
   background-color: var(--accent-color);
-  color: black;
+  color: white;
   text-decoration: none;
   border-radius: 5px;
   transition: background-color 0.3s ease, color 0.3s ease;
