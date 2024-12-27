@@ -50,7 +50,7 @@ body {
 }*/
 .hero-text h2 {
   color: var(--secondary-color);
-  margin-bottom: 10px;
+  margin-bottom: 30px;
   font-size: 5rem;
 }
 
