@@ -7,7 +7,7 @@
     <title>Portfolio</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
-    <link href="https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet"> 
+    <link href="https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/index.83d9161e.css">
 </head>
 
@@ -29,7 +29,8 @@
         <section id="projects">
             <h2>Projects</h2>
             <div class="card-container">
-                <a href="/project1.html" class="card" target="_blank">
+                <!-- Link to project1.html, or any other sub-page -->
+                <a href="/project1.html" class="card">
                     <img src="/robot_on_zipline.23b69ddd.jpg" alt="Project 1">
                     <p>Autonomous Mario Kart Robot</p>
                 </a>
@@ -95,9 +96,8 @@
     };
     return `#${f(0)}${f(8)}${f(4)}`;
 }
-// Enhanced utility function to ensure sufficient contrast using WCAG guidelines
+// Utility for sufficient contrast
 function getContrastingTextColor(backgroundColor) {
-    // Remove the hash and convert to RGB
     const hex = backgroundColor.replace('#', '');
     const r = parseInt(hex.substr(0, 2), 16) / 255;
     const g = parseInt(hex.substr(2, 2), 16) / 255;
@@ -148,13 +148,9 @@ function generateColorScheme() {
                 (baseHue + 240) % 360
             ];
             break;
-        default:
-            hues = [
-                baseHue
-            ];
     }
-    const saturation = 40; // Reduced from 70 for softer colors
-    const lightness = 75; // Increased from 50 for lighter, softer appearance
+    const saturation = 40;
+    const lightness = 75;
     const colors = hues.map((h)=>hslToHex(h, saturation, lightness));
     let scheme = {};
     if (harmony === 'monochromatic') scheme = {
@@ -191,37 +187,38 @@ function generateColorScheme() {
 function applyColorScheme(scheme) {
     for(const varName in scheme)document.documentElement.style.setProperty(varName, scheme[varName]);
 }
-// After applying the color scheme to the root, store it:
-let themeVars = {};
-const rootStyles = getComputedStyle(document.documentElement);
-// The same variable names you use:
-const variables = [
-    '--background-color',
-    '--primary-color',
-    '--secondary-color',
-    '--accent-color',
-    '--neutral-color',
-    '--text-color'
-];
-variables.forEach((varName)=>{
-    themeVars[varName] = rootStyles.getPropertyValue(varName).trim();
-});
-// Save to localStorage
-localStorage.setItem('themeVariables', JSON.stringify(themeVars));
+function storeCurrentThemeInLocalStorage() {
+    let themeVars = {};
+    const rootStyles = getComputedStyle(document.documentElement);
+    const variables = [
+        '--background-color',
+        '--primary-color',
+        '--secondary-color',
+        '--accent-color',
+        '--neutral-color',
+        '--text-color'
+    ];
+    variables.forEach((varName)=>{
+        themeVars[varName] = rootStyles.getPropertyValue(varName).trim();
+    });
+    localStorage.setItem('themeVariables', JSON.stringify(themeVars));
+}
 function applyMonochrome() {
     const monoScheme = {
         '--background-color': '#f5f5f5',
-        /* Light Gray */ '--primary-color': '#4a4a4a',
-        /* Dark Gray */ '--secondary-color': '#6e6e6e',
-        /* Medium Gray */ '--accent-color': '#9e9e9e',
-        /* Light Gray */ '--text-color': '#1a1a1a',
-        /* Very Dark Gray */ '--neutral-color': '#ffffff' /* White */ 
+        '--primary-color': '#4a4a4a',
+        '--secondary-color': '#6e6e6e',
+        '--accent-color': '#9e9e9e',
+        '--text-color': '#1a1a1a',
+        '--neutral-color': '#ffffff'
     };
     applyColorScheme(monoScheme);
 }
 let isMonochrome = true;
 const toggleButton = document.getElementById('theme-toggle');
+// On page load, start in monochrome, then store it
 applyMonochrome();
+storeCurrentThemeInLocalStorage();
 toggleButton.addEventListener('click', ()=>{
     if (isMonochrome) {
         const newScheme = generateColorScheme();
@@ -230,9 +227,11 @@ toggleButton.addEventListener('click', ()=>{
         isMonochrome = false;
     } else {
         applyMonochrome();
-        toggleButton.textContent = "Randomize Colors";
+        toggleButton.textContent = "Randomize Colours";
         isMonochrome = true;
     }
+    // Each time we apply a scheme, store it in localStorage
+    storeCurrentThemeInLocalStorage();
 });
 
 </script>
