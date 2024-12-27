@@ -5,6 +5,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet"> 
     <link rel="stylesheet" href="../public/style.css">
 </head>
 
@@ -17,7 +20,6 @@
             <a href="#singapore-exchange">My Travels</a>
             <a href="#contact">Contact Me</a>
         </nav>
-        <!-- Toggle Button for Color Modes -->
         <button class="theme-toggle" id="theme-toggle" aria-label="Toggle Color Modes">
             Randomize Colours
         </button>
@@ -32,16 +34,8 @@
                     <p>Autonomous Mario Kart Robot</p>
                 </a>
                 <a href="project2.html" class="card">
-                    <img src="../public/images/project2.jpg" alt="Project 2">
-                    <p>Project 2 description</p>
-                </a>
-                <a href="project1.html" class="card">
-                    <img src="../public/images/project1.jpg" alt="Project 3">
-                    <p>Project 3 description</p>
-                </a>
-                <a href="project1.html" class="card">
-                    <img src="../public/images/project1.jpg" alt="Project 4">
-                    <p>Project 4 description</p>
+                    <img src="../public/images/CNN-project.png" alt="Project 2">
+                    <p>Imitation Learning Driving + Letter Recognition</p>
                 </a>
             </div>
         </section>
@@ -92,7 +86,6 @@
     </main>
 
     <script>
-        // Utility function to convert HSL to HEX
         function hslToHex(h, s, l) {
             l /= 100;
             const a = s * Math.min(l, 1 - l) / 100;
@@ -112,30 +105,22 @@
             const g = parseInt(hex.substr(2, 2), 16) / 255;
             const b = parseInt(hex.substr(4, 2), 16) / 255;
 
-            // Apply sRGB gamma correction
             const srgb = [r, g, b].map(c => {
                 return c <= 0.03928 ? c / 12.92 : Math.pow((c + 0.055) / 1.055, 2.4);
             });
 
-            // Calculate luminance
             const luminance = 0.2126 * srgb[0] + 0.7152 * srgb[1] + 0.0722 * srgb[2];
 
-            // Determine contrast
             return luminance > 0.179 ? '#000000' : '#FFFFFF';
         }
 
-        // Function to generate a cohesive and soft color scheme based on harmony type
         function generateColorScheme() {
-            // Define harmony types
             const harmonies = ['monochromatic', 'analogous', 'complementary', 'triadic'];
-            // Select a random harmony type
             const harmony = harmonies[Math.floor(Math.random() * harmonies.length)];
 
-            // Generate a base hue
             const baseHue = Math.floor(Math.random() * 360);
             let hues = [];
 
-            // Determine hues based on harmony
             switch (harmony) {
                 case 'monochromatic':
                     hues = [baseHue];
@@ -153,14 +138,11 @@
                     hues = [baseHue];
             }
 
-            // Define softer saturation and lightness
             const saturation = 40; // Reduced from 70 for softer colors
             const lightness = 75; // Increased from 50 for lighter, softer appearance
 
-            // Convert HSL to HEX
             const colors = hues.map(h => hslToHex(h, saturation, lightness));
 
-            // Assign colors to roles based on harmony with softer adjustments
             let scheme = {};
 
             if (harmony === 'monochromatic') {
@@ -197,20 +179,38 @@
                 };
             }
 
-            // Determine text color based on background with enhanced contrast
             scheme['--text-color'] = getContrastingTextColor(scheme['--background-color']);
 
             return scheme;
         }
 
-        // Function to apply a color scheme (unchanged)
         function applyColorScheme(scheme) {
             for (const varName in scheme) {
                 document.documentElement.style.setProperty(varName, scheme[varName]);
             }
         }
 
-        // Function to apply monochrome scheme (unchanged)
+        // After applying the color scheme to the root, store it:
+        let themeVars = {};
+        const rootStyles = getComputedStyle(document.documentElement);
+        // The same variable names you use:
+        const variables = [
+        '--background-color',
+        '--primary-color',
+        '--secondary-color',
+        '--accent-color',
+        '--neutral-color',
+        '--text-color'
+        ];
+
+        variables.forEach(varName => {
+        themeVars[varName] = rootStyles.getPropertyValue(varName).trim();
+        });
+
+        // Save to localStorage
+        localStorage.setItem('themeVariables', JSON.stringify(themeVars));
+
+
         function applyMonochrome() {
             const monoScheme = {
                 '--background-color': '#f5f5f5', /* Light Gray */
@@ -223,25 +223,19 @@
             applyColorScheme(monoScheme);
         }
 
-        // Initialize state (unchanged)
         let isMonochrome = true;
 
-        // Reference to the toggle button (unchanged)
         const toggleButton = document.getElementById('theme-toggle');
 
-        // Set initial monochrome (unchanged)
         applyMonochrome();
 
-        // Event listener for the toggle button (modified)
         toggleButton.addEventListener('click', () => {
             if (isMonochrome) {
-                // Switch to a new cohesive, soft color scheme
                 const newScheme = generateColorScheme();
                 applyColorScheme(newScheme);
                 toggleButton.textContent = "Monochrome Mode";
                 isMonochrome = false;
             } else {
-                // Switch back to monochrome
                 applyMonochrome();
                 toggleButton.textContent = "Randomize Colors";
                 isMonochrome = true;

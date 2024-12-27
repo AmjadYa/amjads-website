@@ -1,11 +1,137 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Project Title</title>
+  <!-- Link your template CSS -->
+  <link rel="stylesheet" href="/project1.fde52b07.css">
+  <!-- Optionally reuse the same Google Fonts import from your main site if needed -->
+  <link href="https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 </head>
+
 <body>
-    asshole
+  <!-- Header (reuse your exact nav from index.html) -->
+  <header>
+    <!-- Name linking back to your index page -->
+    <h1>
+      <a href="/index.html" class="home-link">Amjad Yaghi</a>
+    </h1>
+    <nav class="nav-links">
+      <!-- Add whichever links you want; same as main site -->
+      <a href="#projects">Projects</a>
+      <a href="#experience">Experience</a>
+      <a href="#singapore-exchange">My Travels</a>
+      <a href="#contact">Contact Me</a>
+    </nav>
+    <!-- You can optionally reuse your theme toggle button if you want to let the user toggle again -->
+    <!-- Or just omit it; your call. If you do, you can re-inject the same script logic from index.html -->
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-text">
+      <h2>Big Project Title</h2>
+      <p>
+        A short overview about this project. Lorem ipsum
+        dolor sit amet, etc.
+      </p>
+      <!-- Some resource links, if needed -->
+      <div class="resource-links">
+        <a href="#" target="_blank">Resource Link 1</a>
+        <a href="#" target="_blank">Resource Link 2</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Table of Contents (sticky on the left once you scroll past hero) -->
+  <nav class="table-of-contents" id="table-of-contents">
+    <h3>Contents</h3>
+    <ul>
+      <!-- Manually link to sections below -->
+      <li><a href="#section1">Section One</a></li>
+      <li><a href="#section2">Section Two</a></li>
+      <li><a href="#section3">Section Three</a></li>
+    </ul>
+  </nav>
+
+  <!-- Main Content Sections -->
+  <main>
+    <section id="section1" class="content-section">
+      <h2>Section One</h2>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing
+        elit. Phasellus laoreet, risus ac consectetur
+        ultrices, sapien elit laoreet velit, non tristique
+        ante quam in augue.
+      </p>
+      <div class="centered-image">
+        <img src="/robot_on_zipline.23b69ddd.jpg" alt="An example image">
+      </div>
+    </section>
+
+    <section id="section2" class="content-section">
+      <h2>Section Two</h2>
+      <p>
+        Another chunk of text goes here. Etiam bibendum
+        pharetra eros, in rhoncus elit bibendum id. <br>
+        Optional new line to show you can do what you want.
+      </p>
+      <div class="centered-image">
+        <img src="/exchange1.119fbdc9.jpg" alt="An example GIF">
+      </div>
+    </section>
+
+    <section id="section3" class="content-section">
+      <h2>Section Three</h2>
+      <p>
+        More descriptive text. Mauris sollicitudin dictum
+        diam eget tempus.
+      </p>
+      <!-- If you don’t need an image here, just omit. -->
+    </section>
+  </main>
+
+  <footer>
+    <!-- Optional footer or disclaimers -->
+    <p>&copy; 2024 Amjad Yaghi</p>
+  </footer>
+
+  <!-- Theme script: reads color vars from localStorage and applies them -->
+  <script>(function() {
+    // Attempt to load stored theme variables from localStorage
+    const storedTheme = localStorage.getItem('themeVariables');
+    if (storedTheme) {
+        const themeVars = JSON.parse(storedTheme);
+        for(const varName in themeVars)document.documentElement.style.setProperty(varName, themeVars[varName]);
+    }
+})();
+
+</script>
+
+  <script>// In project_template.html, after your theme script:
+document.addEventListener("DOMContentLoaded", function() {
+    const toc = document.getElementById("table-of-contents");
+    const hero = document.querySelector(".hero");
+    // Using IntersectionObserver to detect when .hero is out of view
+    const observer = new IntersectionObserver((entries)=>{
+        entries.forEach((entry)=>{
+            if (!entry.isIntersecting) // Hero is NOT in view => show sticky ToC
+            toc.classList.add("sticky");
+            else // Hero is in view => remove sticky
+            toc.classList.remove("sticky");
+        });
+    }, {
+        root: null,
+        threshold: 0
+    });
+    observer.observe(hero);
+});
+
+</script>
+
+
 <script src="/project1.aec5615f.js"></script></body>
+
 </html>
