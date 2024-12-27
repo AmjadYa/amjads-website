@@ -1,3 +1,4 @@
+<!-- File: index.html -->
 <!DOCTYPE html>
 <html lang="en">
 
@@ -29,85 +30,100 @@
     <link rel="stylesheet" href="header.css" />
     <link rel="stylesheet" href="../public/style.css" />
 
-    <!-- Theme Handler (must be loaded so we can call setupThemeToggle()) -->
+    <!-- Theme Handler (so we can call setupThemeToggle()) -->
     <script src="theme_handler.js"></script>
 </head>
 
 <body>
-    <!-- Insert our header.html contents here -->
+    <!-- Insert our header.html -->
     <div id="header-container"></div>
 
-    <main>
-        <section id="projects">
-            <h2>Projects</h2>
-            <div class="card-container">
-                <a href="project1.html" class="card">
-                    <img src="../public/images/robot_on_zipline.jpg" alt="Project 1">
-                    <p>Autonomous Mario Kart Robot</p>
-                </a>
-                <a href="project2.html" class="card">
-                    <img src="../public/images/CNN-project.png" alt="Project 2">
-                    <p>Imitation Learning Driving + Letter Recognition</p>
-                </a>
-            </div>
-        </section>
+    <!-- 
+    CHANGED:
+    Wrap the main content in .fade-in 
+  -->
+    <div class="fade-in" id="fade-container">
+        <main>
+            <section id="projects">
+                <h2>Projects</h2>
+                <div class="card-container">
+                    <a href="project1.html" class="card">
 
-        <section id="experience">
-            <h2>Experience</h2>
-            <div class="card-container">
-                <a href="experience1.html" class="card">
-                    <img src="../public/images/experience1.jpg" alt="Experience 1">
-                    <p>Experience 1 description</p>
-                </a>
-                <a href="experience2.html" class="card">
-                    <img src="../public/images/experience2.jpg" alt="Experience 2">
-                    <p>Experience 2 description</p>
-                </a>
-            </div>
-        </section>
+                        <img src="../public/images/robot_on_zipline.jpg" alt="Project 1">
+                        <p>Autonomous Mario Kart Robot</p>
+                    </a>
+                    <a href="project2.html" class="card">
+                        <img src="../public/images/CNN-project.png" alt="Project 2">
+                        <p>Imitation Learning Driving + CNN Letter Recognition</p>
+                    </a>
+                </div>
+            </section>
 
-        <section id="singapore-exchange">
-            <h2>My Travels</h2>
-            <div class="card-container">
-                <a href="exchange1.html" class="card">
-                    <img src="../public/images/exchange1.jpg" alt="Exchange 1">
-                    <p>Exchange 1 description</p>
-                </a>
-            </div>
-        </section>
+            <section id="experience">
+                <h2>Experience</h2>
+                <div class="card-container">
+                    <a href="experience1.html" class="card">
+                        <img src="../public/images/experience1.jpg" alt="Experience 1">
+                        <p>Experience 1 description</p>
+                    </a>
+                    <a href="experience2.html" class="card">
+                        <img src="../public/images/experience2.jpg" alt="Experience 2">
+                        <p>Experience 2 description</p>
+                    </a>
+                </div>
+            </section>
 
-        <section id="contact">
-            <div class="contact-container">
-                <a href="https://www.linkedin.com/in/yourprofile" target="_blank" class="contact-link">
-                    <img src="../public/images/linkedin-icon-logo.png" alt="LinkedIn">
-                    <span>LinkedIn</span>
-                </a>
-                <a href="https://www.youtube.com/yourchannel" target="_blank" class="contact-link">
-                    <img src="../public/images/youtube-icon.png" alt="YouTube">
-                    <span>YouTube</span>
-                </a>
-                <a href="https://github.com/yourusername" target="_blank" class="contact-link">
-                    <img src="../public/images/github-icon.png" alt="GitHub">
-                    <span>GitHub</span>
-                </a>
-            </div>
-            <div class="resume">
-                <a href="../public/ENPH353_FINAL_REPORT-1.pdf" target="_blank">
-                    My Resume
-                </a>
-            </div>
-        </section>
-    </main>
+            <section id="singapore-exchange">
+                <h2>My Travels</h2>
+                <div class="card-container">
+                    <a href="exchange1.html" class="card">
+                        <img src="../public/images/exchange1.jpg" alt="Exchange 1">
+                        <p>Exchange 1 description</p>
+                    </a>
+                </div>
+            </section>
 
-    <!-- Fetch header.html and insert it, then attach the toggle logic -->
+            <section id="contact">
+                <div class="contact-container">
+                    <a href="https://www.linkedin.com/in/amjadyaghi" target="_blank" class="contact-link">
+                        <img src="../public/images/linkedin-icon-logo.png" alt="LinkedIn">
+                        <span>LinkedIn</span>
+                    </a>
+                    <a href="https://www.youtube.com/@amjadyaghi" target="_blank" class="contact-link">
+                        <img src="../public/images/youtube-icon.png" alt="YouTube">
+                        <span>YouTube</span>
+                    </a>
+                    <a href="https://github.com/AmjadYa" target="_blank" class="contact-link">
+                        <img src="../public/images/github-icon.png" alt="GitHub">
+                        <span>GitHub</span>
+                    </a>
+                </div>
+                <div class="resume">
+                    <a href="../public/ENPH353_FINAL_REPORT-1.pdf" target="_blank">
+                        My Resume
+                    </a>
+                </div>
+            </section>
+        </main>
+    </div> <!-- END fade-in container -->
+
+    <!-- Fetch header.html, then attach the theme toggle -->
     <script>
         fetch('header.html')
             .then(response => response.text())
             .then(data => {
                 document.getElementById('header-container').innerHTML = data;
-                // Now that the button actually exists, attach the event listener:
                 setupThemeToggle();
             });
+
+        /* 
+          CHANGED:
+          After DOM loads, add "visible" to #fade-container to fade in
+        */
+        document.addEventListener('DOMContentLoaded', function () {
+            const fadeDiv = document.getElementById('fade-container');
+            fadeDiv.classList.add('visible');
+        });
     </script>
 </body>
 

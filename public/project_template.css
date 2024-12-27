@@ -29,7 +29,8 @@ body {
 
 /* HERO */
 .hero {
-  padding-top: 80px; /* so we clear fixed header */
+  padding-top: 80px;
+  /* so we clear fixed header */
   background-color: var(--neutral-color);
   padding-bottom: 40px;
   text-align: center;
@@ -50,10 +51,12 @@ body {
 .hero-text h2 {
   color: var(--secondary-color);
   margin-bottom: 10px;
+  font-size: 5rem;
 }
 
 /* Resource links under hero */
 .resource-links {
+  padding-top: 50px;
   display: flex;
   gap: 15px;
   justify-content: center;
@@ -85,7 +88,7 @@ body {
   border-radius: 8px;
   padding: 15px;
   transition: opacity 0.3s ease, transform 0.3s ease;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
   opacity: 0;
   pointer-events: none;
 }
